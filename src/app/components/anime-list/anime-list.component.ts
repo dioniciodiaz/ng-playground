@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AnimeService } from '@services/anime.service';
-import { Anime } from '@models/anime';
+import { Anime, AnimeRequest } from '@models/anime';
 
 @Component({
   selector: 'app-anime-list',
@@ -13,9 +13,8 @@ export class AnimeListComponent implements OnInit {
   constructor(private animeService: AnimeService) { }
 
   ngOnInit(): void {
-    this.animeService.search('naruto&limit=16').subscribe((data) => {
-      this.animes = data;
-      console.log('data', data);
+    this.animeService.search('naruto&limit=16').subscribe(({ results }: AnimeRequest) => {
+      this.animes = results;
     });
   }
 

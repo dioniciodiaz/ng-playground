@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AnimeListComponent } from './components/anime-list/anime-list.component';
 import { CommentsListComponent } from './components/comments-list/comments-list.component';
+import { AnimeItemComponent } from './components/anime-item/anime-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CommentsListComponent } from './components/comments-list/comments-list.
     HomeComponent,
     NavbarComponent,
     AnimeListComponent,
-    CommentsListComponent
+    CommentsListComponent,
+    AnimeItemComponent
   ],
   imports: [
     BrowserModule,
