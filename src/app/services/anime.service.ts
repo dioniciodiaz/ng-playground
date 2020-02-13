@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Anime } from '@models/anime';
+import { Anime, AnimeRequest } from '@models/anime';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,12 @@ export class AnimeService {
 
   constructor(private http: HttpClient) { }
 
-  search(params: string) {
-    return this.http.get<Anime[]>(`${this.apiUrl}search/anime?q=${params}`)
+  search(params: string): Observable<AnimeRequest> {
+    return this.http.get<AnimeRequest>(`${this.apiUrl}search/anime?q=${params}`)
       .pipe(catchError(this.handleError));
   }
 
-  getById(id: string) {
+  getById(id: string): Observable<Anime> {
     return this.http.get<Anime>(`$${this.apiUrl}anime/${id}`)
       .pipe(catchError(this.handleError));
   }
