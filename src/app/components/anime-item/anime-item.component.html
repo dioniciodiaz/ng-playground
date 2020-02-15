@@ -1,9 +1,9 @@
-<div class="col my-lg-2">
-  <div class="card">
-    <img src={{anime.image_url}} class="card-img-top" alt={{anime.title}} height="250px" width="150">
+<div class="col my-lg-2 py-1">
+  <div class="card h-100">
+    <img [src]="anime.image_url" class="card-img-top" [alt]="anime.title" height="250px" width="150">
     <div class="card-body">
-      <h5 class="card-title">{{anime.title}}</h5>
-      <p class="card-text">{{anime.synopsis}}</p>
+      <h5 class="card-title">{{anime.title | truncateText:20}}</h5>
+      <p class="card-text">{{anime.synopsis | truncateText}}</p>
     </div>
   </div>
 </div>
