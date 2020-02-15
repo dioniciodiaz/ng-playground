@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AnimeListComponent } from './components/anime-list/anime-list.component';
 import { CommentsListComponent } from './components/comments-list/comments-list.component';
 import { AnimeItemComponent } from './components/anime-item/anime-item.component';
+import { TruncateTextPipe } from './pipes/truncate-text.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AnimeItemComponent } from './components/anime-item/anime-item.component
     NavbarComponent,
     AnimeListComponent,
     CommentsListComponent,
-    AnimeItemComponent
+    AnimeItemComponent,
+    TruncateTextPipe
   ],
   imports: [
     BrowserModule,
