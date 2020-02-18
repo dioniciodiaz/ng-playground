@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { Anime } from '@models/anime';
 
 @Component({

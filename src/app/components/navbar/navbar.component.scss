@@ -1,7 +1,13 @@
+$nav-primary :  rgba(90, 166, 253, .60);
 .ng-nav {
-  background-color: rgba(0, 0, 0, .60);
+  background-color:$nav-primary;
   backdrop-filter: saturate(180%) blur(20px);
    a {
-    color: white;
+    color: black;
+
+    &:hover {
+      background: darken($nav-primary, 10%);
+      color: whitesmoke;
+    }
   }
 }

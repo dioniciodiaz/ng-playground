@@ -4,12 +4,14 @@ import { AnimeService } from '@services/anime.service';
 import { Anime, AnimeRequest } from '@models/anime';
 
 @Component({
-  selector: 'app-anime-list',
-  templateUrl: './anime-list.component.html',
-  styleUrls: ['./anime-list.component.scss']
+  selector: 'app-anime',
+  templateUrl: './anime.component.html',
+  styleUrls: ['./anime.component.scss']
 })
-export class AnimeListComponent implements OnInit {
+export class AnimeComponent implements OnInit {
+
   animes: Anime[] = [];
+
   constructor(private animeService: AnimeService) { }
 
   ngOnInit(): void {

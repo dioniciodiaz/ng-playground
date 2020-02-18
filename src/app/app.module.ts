@@ -6,20 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AnimeListComponent } from './components/anime-list/anime-list.component';
-import { CommentsListComponent } from './components/comments-list/comments-list.component';
-import { AnimeItemComponent } from './components/anime-item/anime-item.component';
 import { TruncateTextPipe } from './pipes/truncate-text.pipe';
+import { AnimeComponent } from './components/anime/anime.component';
+import { AnimeItemComponent } from './components/anime/anime-item/anime-item.component';
+import { UsersComponent } from './components/users/users.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { AnimeSearchTabComponent } from './components/anime/anime-search-tab/anime-search-tab.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     NavbarComponent,
-    AnimeListComponent,
-    CommentsListComponent,
+    HomeComponent,
+    AnimeComponent,
     AnimeItemComponent,
-    TruncateTextPipe
+    TruncateTextPipe,
+    UsersComponent,
+    PostsComponent,
+    AnimeSearchTabComponent,
   ],
   imports: [
     BrowserModule,
