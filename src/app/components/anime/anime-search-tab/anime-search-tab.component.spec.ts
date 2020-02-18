@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommentsListComponent } from './comments-list.component';
+import { AnimeSearchTabComponent } from './anime-search-tab.component';
 
-describe('CommentsListComponent', () => {
-  let component: CommentsListComponent;
-  let fixture: ComponentFixture<CommentsListComponent>;
+describe('AnimeSearchTabComponent', () => {
+  let component: AnimeSearchTabComponent;
+  let fixture: ComponentFixture<AnimeSearchTabComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentsListComponent ]
+      declarations: [ AnimeSearchTabComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommentsListComponent);
+    fixture = TestBed.createComponent(AnimeSearchTabComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

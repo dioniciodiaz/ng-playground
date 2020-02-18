@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  animeApiUrl: 'https://api.jikan.moe/v3/',
+  dummyApiUrl: 'https://jsonplaceholder.typicode.com/'
 };
 
 /*

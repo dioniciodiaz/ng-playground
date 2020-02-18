@@ -3,14 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 import { HomeComponent } from '@components/home/home.component';
-import { AnimeListComponent } from '@components/anime-list/anime-list.component';
-import { CommentsListComponent } from '@components/comments-list/comments-list.component';
-
+import { AnimeComponent } from '@components/anime/anime.component';
+import { UsersComponent } from '@components/users/users.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'anime', component: AnimeListComponent },
-  { path: 'comments', component: CommentsListComponent },
+  { path: 'anime', component: AnimeComponent },
+  { path: 'users', component: UsersComponent },
 ];
 
 @NgModule({
