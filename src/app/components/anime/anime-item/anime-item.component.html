@@ -1,5 +1,5 @@
 <div class="col my-lg-2 py-1 mt-3">
-  <div class="card h-100">
+  <div class="card h-100 anime-item" (click)="goToAnime(anime.url)">
     <img [src]="anime.image_url" class="card-img-top" [alt]="anime.title" height="250px" width="150">
     <div class="card-body">
       <h5 class="card-title">{{anime.title | truncateText:20}}</h5>

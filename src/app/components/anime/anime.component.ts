@@ -12,12 +12,20 @@ export class AnimeComponent implements OnInit {
 
   animes: Anime[] = [];
 
-  constructor(private animeService: AnimeService) { }
+  constructor(
+    private animeService: AnimeService,
+  ) { }
 
   ngOnInit(): void {
-    this.animeService.search('naruto&limit=16').subscribe(({ results }: AnimeRequest) => {
+    this.searchAnime('naruto');
+  }
+
+  searchAnimeByTerms(terms: string) {
+    this.searchAnime(terms);
+  }
+  searchAnime(terms: string, params: string = '&limit=15') {
+    this.animeService.search(`${terms}${params}`).subscribe(({ results }: AnimeRequest) => {
       this.animes = results;
     });
   }
-
 }
