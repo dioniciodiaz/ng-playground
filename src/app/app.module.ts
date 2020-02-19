@@ -20,6 +20,9 @@ import { AnimeItemComponent } from './components/anime/anime-item/anime-item.com
 import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { AnimeSearchTabComponent } from './components/anime/anime-search-tab/anime-search-tab.component';
+import { UsersPostsComponent } from './components/users/users-posts/users-posts.component';
+import { UsersFormComponent } from './components/users/users-form/users-form.component';
+import { TextEmptyPipe } from './pipes/text-empty.pipe';
 
 
 @NgModule({
@@ -33,6 +36,9 @@ import { AnimeSearchTabComponent } from './components/anime/anime-search-tab/ani
     UsersComponent,
     PostsComponent,
     AnimeSearchTabComponent,
+    UsersPostsComponent,
+    UsersFormComponent,
+    TextEmptyPipe,
   ],
   imports: [
     BrowserModule,
