@@ -1,4 +1,10 @@
-<div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2">
-  <app-anime-item [anime]="anime" *ngFor="let anime of animes">
-  </app-anime-item>
+<div>
+  <app-anime-search-tab (search)="searchAnimeByTerms($event)"></app-anime-search-tab>
+  <div *ngIf="animes" class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-2 mt-1">
+    <app-anime-item [anime]="anime" *ngFor="let anime of animes">
+    </app-anime-item>
+  </div>
+  <div *ngIf="!animes">
+    There is no anime
+  </div>
 </div>

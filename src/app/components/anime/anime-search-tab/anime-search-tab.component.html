@@ -1,1 +1,15 @@
-<p>anime-search-tab works!</p>
+<div #searchTab>
+  <div class="input-group mb-3 mt-3">
+    <input type="text" class="form-control" placeholder="search for an anime , e.g naruto" aria-label="search..."
+      aria-describedby="button-addon2" [formControl]="searchParams" required minlength=3 (key.enter)="searchAnime()">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="searchAnime()">
+        <fa-icon [icon]="faSearch"></fa-icon>
+        Search
+      </button>
+    </div>
+  </div>
+  <div *ngIf="searchParams.invalid && searchParams.errors.minlength" class="alert alert-danger">
+    must be at least 3 characters long.
+  </div>
+</div>
