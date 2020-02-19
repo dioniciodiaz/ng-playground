@@ -1,1 +1,11 @@
-<p>posts works!</p>
+<div class="card m-lg-2 m-md-2">
+  <div class="card-header post-header">
+    <H4>{{post.title | titlecase}}</H4>
+  </div>
+  <div class="card-body post-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{post.body}}</p>
+      <footer class="blockquote-footer">Author: <cite title="Author">{{post.user.name}}</cite></footer>
+    </blockquote>
+  </div>
+</div>
