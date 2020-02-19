@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.postService.search('?_expand=user&_page=1&_limit=18').subscribe(response => {
+    this.postService.search('?_expand=user&_limit=18&_page=1').subscribe(response => {
       this.posts = response;
     });
   }

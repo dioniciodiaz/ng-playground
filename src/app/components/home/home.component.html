@@ -1,6 +1,6 @@
-<div class="">
-  <h1>Posts</h1>
-  <div *ngIf="posts" class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-1">
+<div>
+  <h1 class="text-center">Posts</h1>
+  <div *ngIf="posts" class="row row-cols-lg-2 row-cols-md-1 mt-1">
     <app-post [post]="post" *ngFor="let post of posts">
     </app-post>
   </div>
