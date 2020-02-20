@@ -23,6 +23,7 @@ import { AnimeSearchTabComponent } from './components/anime/anime-search-tab/ani
 import { UsersPostsComponent } from './components/users/users-posts/users-posts.component';
 import { UsersFormComponent } from './components/users/users-form/users-form.component';
 import { TextEmptyPipe } from './pipes/text-empty.pipe';
+import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { TextEmptyPipe } from './pipes/text-empty.pipe';
     UsersPostsComponent,
     UsersFormComponent,
     TextEmptyPipe,
+    PostsListComponent,
   ],
   imports: [
     BrowserModule,
