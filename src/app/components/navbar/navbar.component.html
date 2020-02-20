@@ -1,6 +1,6 @@
 <nav class="nav sticky-top ng-nav">
-  <a class="nav-link" routerLink="/">Home</a>
-  <a class="nav-link" routerLink="/anime">Anime</a>
-  <a class="nav-link" routerLink="/users">Users</a>
-  <a class="nav-link disabled" routerLink="/" tabindex="-1" aria-disabled="true">New Section</a>
+  <a class="nav-link" routerLinkActive="item-active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  <a class="nav-link" routerLinkActive="item-active" routerLink="/anime">Anime</a>
+  <a class="nav-link" routerLinkActive="item-active" routerLink="/users">Users</a>
+  <a class="nav-link disabled" routerLink="/">New Section</a>
 </nav>

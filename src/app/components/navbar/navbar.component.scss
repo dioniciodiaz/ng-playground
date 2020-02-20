@@ -10,4 +10,8 @@ $nav-primary : rgba(49, 100, 158, 0.6);
       color: whitesmoke;
     }
   }
+  .item-active {
+      background: darken($nav-primary, 50%);
+      color: whitesmoke;
+  }
 }
