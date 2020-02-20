@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { User } from '@models/user';
+import { UserService } from '@services/user.service';
+
+import { faEdit, faEye } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  faEdit = faEdit;
+  faEye = faEye;
+  users: User[];
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.search().subscribe(response => {
+      this.users = response;
+    });
   }
 
 }

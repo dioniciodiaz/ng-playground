@@ -1,0 +1,17 @@
+<div class="mt-3">
+  <div *ngIf="user" class="jumbotron user-presentation">
+    <h1 class="display-4">Welcome, I am {{user.username}}!</h1>
+    <span></span>
+    <p class="lead">
+      My real name is {{user.name}} and this is my website <a [href]="user.website"
+        target="_blank">{{user.website}}.</a>
+      I Work in an small company called <b>{{user.company.name}}</b>.
+    </p>
+    <hr class="my-4">
+    <p> As a hobby I ussually write posts about my daily life. You should
+      read them, each of them will gave you little tips about {{user.company.bs}}.</p>
+  </div>
+  <div id="user-posts" *ngIf="user?.posts">
+    <app-posts-list [posts]="user.posts"></app-posts-list>
+  </div>
+</div>

@@ -13,7 +13,7 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  search(params: string): Observable<Post[]> {
+  search(params: string = ''): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.apiUrl}${params}`)
       .pipe(catchError(this.handleError));
   }

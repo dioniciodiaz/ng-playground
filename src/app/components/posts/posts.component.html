@@ -1,11 +1,15 @@
-<div class="card m-lg-2 m-md-2">
+<div class="card m-lg-2 m-md-2 my-2">
   <div class="card-header post-header">
     <H4>{{post.title | titlecase}}</H4>
   </div>
   <div class="card-body post-body">
     <blockquote class="blockquote mb-0">
       <p>{{post.body}}</p>
-      <footer class="blockquote-footer">Author: <cite title="Author">{{post.user.name}}</cite></footer>
+      <footer *ngIf="post?.user" class="blockquote-footer">Author: <cite title="Author">
+          <a [routerLink]="['/users/', post.user.id, 'posts']">
+            {{post.user.username}} </a>
+        </cite>
+      </footer>
     </blockquote>
   </div>
 </div>

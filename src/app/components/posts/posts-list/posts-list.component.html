@@ -1,0 +1,10 @@
+<section id="posts-list">
+  <h1 class="text-center">Posts</h1>
+  <div *ngIf="posts.length > 1" class="row row-cols-lg-2 row-cols-md-1 mt-1">
+    <app-post [post]="post" *ngFor="let post of posts">
+    </app-post>
+  </div>
+  <div *ngIf="posts.length ===0">
+    There is no post Avaliable
+  </div>
+</section>
