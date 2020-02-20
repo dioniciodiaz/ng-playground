@@ -1,3 +1,4 @@
+import { Post } from './post';
 
 interface AddressGeolocation {
   lat: string;
@@ -27,4 +28,5 @@ export interface User {
   phone: string;
   website?: string;
   company: Company;
+  posts?: Post[];
 }
