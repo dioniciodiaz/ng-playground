@@ -17,8 +17,8 @@ export class UserService {
       .pipe(catchError(this.handleError));
   }
 
-  getById(id: string): Observable<User> {
-    return this.http.get<User>(`$${this.apiUrl}/${id}?_expand=user`)
+  getById(id: string, params: string = ''): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}${params}`)
       .pipe(catchError(this.handleError));
   }
 
@@ -30,7 +30,7 @@ export class UserService {
       .pipe(catchError(this.handleError));
   }
 
-  edit(user: User) {
+  update(user: User) {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
