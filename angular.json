@@ -128,7 +128,9 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "baseHref": "https://dioniciodiaz.github.io/ng-playground/"
+          }
         }
       }
     }
