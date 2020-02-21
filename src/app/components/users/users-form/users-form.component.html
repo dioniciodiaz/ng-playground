@@ -5,20 +5,23 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="user-name" formControlName="email">
+          <input type="text" class="form-control" id="user-name" formControlName="name" appGetFormControlError
+            [validationField]="'name'">
         </div>
         <div class="form-group col-md-6">
           <label for="nickname">Username</label>
-          <input type="text" class="form-control" id="user-nickname" formControlName="username">
+          <input type="text" class="form-control" id="user-nickname" formControlName="username" appGetFormControlError
+            [validationField]="'username'">
         </div>
         <div class="form-group col-md-6">
           <label for="user-email">Email address</label>
-          <input type="email" class="form-control" id="user-email" aria-describedby="userEmail" formControlName="email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <input type="email" class="form-control" id="user-email" aria-describedby="userEmail" formControlName="email"
+            appGetFormControlError [validationField]="'email'">
         </div>
         <div class="form-group col-md-6">
           <label for="phone">Phone</label>
-          <input type="number" class="form-control" id="user-phone" formControlName="phone">
+          <input type="number" class="form-control" id="user-phone" formControlName="phone" appGetFormControlError
+            [validationField]="'phone'">
         </div>
       </div>
       <div class="form-group">
@@ -44,7 +47,8 @@
           </div>
           <div class="form-group col-md-4">
             <label for="user-zipcode">Zipcode</label>
-            <input type="text" class="form-control" id="user-zipcode" formControlName="zipcode">
+            <input type="text" class="form-control" id="user-zipcode" formControlName="zipcode" appGetFormControlError
+              [validationField]="'zipcode'">
           </div>
         </div>
       </div>
@@ -53,16 +57,19 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="company-name">Company's name</label>
-            <input type="text" class="form-control" id="company-name" formControlName="name">
+            <input type="text" class="form-control" id="company-name" formControlName="name" appGetFormControlError
+              [validationField]="'name'">
           </div>
           <div class="form-group col-md-6">
             <label for="company-bs">Company's bussines</label>
-            <input type="text" class="form-control" id="company-bs" formControlName="bs">
+            <input type="text" class="form-control" id="company-bs" formControlName="bs" appGetFormControlError
+              [validationField]="'bs'">
           </div>
         </div>
         <div class="form-group">
           <label for="company-catchPhrase"> Company'scatchPhrase</label>
-          <input type="text" class="form-control" id="company-catchPhrase" formControlName="catchPhrase">
+          <input type="text" class="form-control" id="company-catchPhrase" formControlName="catchPhrase"
+            appGetFormControlError [validationField]="'catchPhrase'">
         </div>
       </div>
       <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Save</button>

@@ -12,7 +12,6 @@ import { UserService } from '@services/user.service';
 export class UsersFormComponent implements OnInit {
   constructor(private route: ActivatedRoute, private userService: UserService, private userFormBuilder: FormBuilder) { }
   userForm: FormGroup;
-
   ngOnInit(): void {
     const geolocation = this.userFormBuilder.group({
       lat: [''],
@@ -43,8 +42,47 @@ export class UsersFormComponent implements OnInit {
       company,
       address,
     });
+
+    this.route.paramMap.subscribe(params => {
+      const userId = params.get('userId');
+      if (userId) {
+        this.getUserInfo(userId);
+      }
+    });
+
   }
+
+  get name() {
+    return this.userForm.get('name');
+  }
+  get email() {
+    return this.userForm.get('email');
+  }
+  get username() {
+    return this.userForm.get('username');
+  }
+  get companyBusiness() {
+    return this.userForm.get('company').get('bs');
+  }
+  get companyName() {
+    return this.userForm.get('company').get('name');
+  }
+  get companyCatchPhrase() {
+    return this.userForm.get('company').get('catchPhrase');
+  }
+  get userZipcode() {
+    return this.userForm.get('address').get('zipcode');
+  }
+
+  getUserInfo(id: string) {
+    this.userService.getById(id).subscribe(response => {
+      this.userForm.patchValue(response);
+    });
+  }
+
   save() {
-    console.log(this.userForm.value);
+    const user = this.userForm.value;
+
+    this.userService.save(user);
   }
 }
