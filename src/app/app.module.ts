@@ -24,7 +24,7 @@ import { UsersPostsComponent } from './components/users/users-posts/users-posts.
 import { UsersFormComponent } from './components/users/users-form/users-form.component';
 import { TextEmptyPipe } from './pipes/text-empty.pipe';
 import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
-import { HighlightDirective } from './directives/highlight.directive';
+// directives
 import { GetFormControlErrorDirective } from './directives/get-form-control-error.directive';
 
 
@@ -43,7 +43,6 @@ import { GetFormControlErrorDirective } from './directives/get-form-control-erro
     UsersFormComponent,
     TextEmptyPipe,
     PostsListComponent,
-    HighlightDirective,
     GetFormControlErrorDirective,
   ],
   imports: [
