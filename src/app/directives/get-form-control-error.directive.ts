@@ -18,17 +18,15 @@ export class GetFormControlErrorDirective implements OnInit, OnDestroy {
 
   @Input() validationField = 'field';
   @Input() validationStyle = 'form-text text-danger';
+  @Input() validationElement = 'span';
   statusChangeSubscription: Subscription;
 
-  errorSpanId = '';
+  errorElementId = '';
 
   ngOnInit(): void {
-    this.errorSpanId = this.validationField + new Date() + '-error-msg';
-    console.log('its me your looking for');
+    this.errorElementId = this.validationField + new Date() + '-error-msg';
     this.statusChangeSubscription = this.control.statusChanges.subscribe(
       (status) => {
-        console.log('status', status);
-
         if (status === 'INVALID') {
           this.showError();
         } else {
@@ -42,15 +40,10 @@ export class GetFormControlErrorDirective implements OnInit, OnDestroy {
     this.statusChangeSubscription.unsubscribe();
   }
 
-  @HostListener('click', ['$event.target'])
-  onClick() {
-    console.log('button', this.control.value);
-  }
   @HostListener('blur', ['$event'])
   handleBlurEvent(event) {
     // This is needed to handle the case of clicking a required field and moving out.
     // Rest all are handled by status change subscription
-    console.log('this.control.value', this.control.value);
     if (this.control.value == null || this.control.value === '') {
       if (this.control.errors) {
         this.showError();
@@ -69,13 +62,14 @@ export class GetFormControlErrorDirective implements OnInit, OnDestroy {
 
     if (firstFieldError.length > 1) {
       const errorMsg = this.validationMsgService.getValidationMsg(firstFieldError, this.validationField, fieldErrors);
-      const errorSpan = `<span class="${this.validationStyle}" id="${this.errorSpanId}">${errorMsg}</span>`;
-      this.elRef.nativeElement.parentElement.insertAdjacentHTML('beforeend', errorSpan);
+      // tslint:disable-next-line:max-line-length
+      const errorElement = `<${this.validationElement} class="${this.validationStyle}" id="${this.errorElementId}">${errorMsg}</${this.validationElement}>`;
+      this.elRef.nativeElement.parentElement.insertAdjacentHTML('beforeend', errorElement);
     }
   }
 
   private removeError(): void {
-    const errorElement = document.getElementById(this.errorSpanId);
+    const errorElement = document.getElementById(this.errorElementId);
     if (errorElement) {
       errorElement.remove();
     }

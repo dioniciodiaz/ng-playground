@@ -14,20 +14,20 @@ export class FormControlValidationMsgService {
   constructor() { }
 
   private errorMessages = {
-    required: (field: string) => `This ${field} is required`,
-    maxlength: (field: string, errorObject: ValidationErrors) => {
-      return `Max permited characters: ${errorObject.requiredLength}, but you typed: ${errorObject.actualLength} on ${field}`;
+    required: (field: string) => `${field} is required`,
+    maxlength: (field: string, { requiredLength, actualLength }: any) => {
+      return `Max permited characters: ${requiredLength}, but you typed: ${actualLength} on ${field}`;
     },
-    minlength: (field: string, errorObject: ValidationErrors) => {
-      return `Min permited characters: ${errorObject.requiredLength}, but you typed: ${errorObject.actualLength} on ${field}`;
+    minlength: (field: string, { requiredLength, actualLength }: any) => {
+      return `Min permited characters: ${requiredLength}, but you typed: ${actualLength} on ${field}`;
     },
     email: () => 'It must be a valid email.'
   };
 
   public getValidationMsg(validationId: string, field: string = 'field', errorsObject: ValidationErrors): string {
     if (this.errorMessages.hasOwnProperty(validationId)) {
-      return this.errorMessages[validationId](field, errorsObject);
+      return this.errorMessages[validationId](field, errorsObject[validationId]);
     }
-    return `This ${field} is invalid`;
+    return `${field} is invalid`;
   }
 }
