@@ -22,15 +22,21 @@ export class UserService {
       .pipe(catchError(this.handleError));
   }
 
-  create(user: User) {
+  private create(user: User) {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
     return this.http.post<User>(this.apiUrl, user)
       .pipe(catchError(this.handleError));
   }
-
-  update(user: User) {
+  save(user: User) {
+    if (user.id) {
+      return this.update(user);
+    } else {
+      return this.create(user);
+    }
+  }
+  private update(user: User) {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });

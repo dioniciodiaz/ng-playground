@@ -1,1 +1,78 @@
-<p>users-form works!</p>
+<div>
+  <h1>User Info</h1>
+  <div class="card my-2 mb-2 ">
+    <form [formGroup]="userForm" (ngSubmit)="save()" class="m-3 p-2">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="user-name" formControlName="name" appGetFormControlError
+            [validationField]="'name'">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nickname">Username</label>
+          <input type="text" class="form-control" id="user-nickname" formControlName="username" appGetFormControlError
+            [validationField]="'username'">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="user-email">Email address</label>
+          <input type="email" class="form-control" id="user-email" aria-describedby="userEmail" formControlName="email"
+            appGetFormControlError [validationField]="'email'">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="phone">Phone</label>
+          <input type="number" class="form-control" id="user-phone" formControlName="phone" appGetFormControlError
+            [validationField]="'phone'">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input type="text" class="form-control" id="user-website" formControlName="website">
+      </div>
+      <h4>User address</h4>
+      <div formGroupName="address">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="user-street">Street</label>
+            <input type="text" class="form-control" id="user-street" formControlName="street">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="user-suite">Suite</label>
+            <input type="text" class="form-control" id="user-suite" formControlName="suite">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="user-city">City</label>
+            <input type="text" class="form-control" id="user-city" formControlName="city">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="user-zipcode">Zipcode</label>
+            <input type="text" class="form-control" id="user-zipcode" formControlName="zipcode" appGetFormControlError
+              [validationField]="'zipcode'">
+          </div>
+        </div>
+      </div>
+      <h4> Company's Info</h4>
+      <div formGroupName="company">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="company-name">Company's name</label>
+            <input type="text" class="form-control" id="company-name" formControlName="name" appGetFormControlError
+              [validationField]="'name'">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="company-bs">Company's bussines</label>
+            <input type="text" class="form-control" id="company-bs" formControlName="bs" appGetFormControlError
+              [validationField]="'bs'">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="company-catchPhrase"> Company'scatchPhrase</label>
+          <input type="text" class="form-control" id="company-catchPhrase" formControlName="catchPhrase"
+            appGetFormControlError [validationField]="'catchPhrase'">
+        </div>
+      </div>
+      <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+</div>

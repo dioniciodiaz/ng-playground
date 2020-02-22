@@ -24,6 +24,8 @@ import { UsersPostsComponent } from './components/users/users-posts/users-posts.
 import { UsersFormComponent } from './components/users/users-form/users-form.component';
 import { TextEmptyPipe } from './pipes/text-empty.pipe';
 import { PostsListComponent } from './components/posts/posts-list/posts-list.component';
+// directives
+import { GetFormControlErrorDirective } from './directives/get-form-control-error.directive';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { PostsListComponent } from './components/posts/posts-list/posts-list.com
     UsersFormComponent,
     TextEmptyPipe,
     PostsListComponent,
+    GetFormControlErrorDirective,
   ],
   imports: [
     BrowserModule,
